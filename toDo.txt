@@ -1,0 +1,67 @@
+SYMFONY PROJECT INSTALL ;;;...
+
+
+
+symfony project to do =>
+- first install symfony by symfony new project-name --full for full app or symfony new project-name for little app;
+- then install server => composer require server --dev => so u will not need to reinstall again when your app will be in product..
+- now u can start ur app via symfony server:start;
+
+
+
+DONE .....................
+
+
+
+DOCTRINE ...
+
+as long as we are working on the school project i do not have choice but, well i am going to start with th database configurations
+
+- so, first to work on the database, will start installing doctrine
+- start with => composer require symfony/orm-pack  /then/ => composer require --dev symfony/maker-bundle to install doctrine ...
+- go the .env file on the symfony project that u have created and set the database connections ..
+- now run =>  php bin/console doctrine:database:create and let the rest to doctrine to create the database
+- ok, start to connect to the database name with ur phpstorm
+
+
+
+DONE ......
+
+MAKE ENTITIES ...
+
+- to make entity run => php bin/console make:entity and after start to make them by following the steps ...
+- after that u need to load all of them to the database that u just created, to that run the next => php bin/console make:migration then one more
+thing u need to do, => php bin/console doctrine:migrations:migrate
+
+it is over ...
+
+
+DONE ...
+
+now how we deal with the fixtures thing, to do that
+
+- first, install => composer require --dev orm-fixtures / then / install faker by composer require fzaninotto/faker
+
+it's over ...
+
+
+
+
+DONE ............................
+
+APP MANAGEMENT WITH CONTROLLER ...
+
+
+ok, now start to make controller to mange display ...
+
+- create a controller by php bin/console make:controller
+-
+
+
+
+DONE ....
+
+install webpack
+
+- first install encore by => composer require encore
+-
