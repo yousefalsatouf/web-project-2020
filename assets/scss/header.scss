@@ -1,9 +1,7 @@
-@import "helpers/variables.scss";
+@import 'helpers/variables';
 
 .header {
-  display: table-row;
-  height: 1px;
-  background-color: green;
+  background-color: black;
 }
 
 .header-minimal {
@@ -419,7 +417,7 @@
 }
 
 .header-top {
-  //@extend .clearfix;
+ // @extend .clearfix;
 
   border-bottom: 1px solid rgba(black, .05);
   padding: 6px 0px 2px 0px;
@@ -430,7 +428,7 @@
 }
 
 .header-bottom {
-  //@extend .clearfix;
+ // @extend .clearfix;
 }
 
 .header-search {

@@ -3,7 +3,9 @@
 {% block title %}{{ home_title }}{% endblock %}
 
 {% block body %}
-    {% include 'extendsFiles/header.html.twig' %}
+    <div class="page-wrapper">
+        {% include 'extendsFiles/header.html.twig' %}
 
-    {% include 'extendsFiles/footer.html.twig' %}
+        {% include 'extendsFiles/footer.html.twig' %}
+    </div>
 {% endblock %}
