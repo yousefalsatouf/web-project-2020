@@ -1,13 +1,6 @@
-@import 'helpers/variables';
-
 .header {
-  background-color: black;
-}
-
-.header-minimal {
-  .container-fluid {
-    padding: 0px !important;
-  }
+  color: white;
+  background-color: #444444;
 }
 
 .header-wrapper {
@@ -17,73 +10,75 @@
   position: relative;
   z-index: 200;
 
+  .container{
+
+    .header-inner {
+      display: table;
+      position: relative;
+      width: 100%;
+
+      .header-logo {
+        display: table-cell;
+        padding: 0px 45px 0px 0px;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 1px;
+
+        a {
+          color: $color-black;
+
+          &:active, &:focus, &:hover {
+            color: $color-black;
+            text-decoration: none;
+
+            .header-transparent & {
+              color: #fff;
+            }
+          }
+
+          .header-transparent & {
+            color: #fff;
+          }
+        }
+
+        span {
+          font-size: 22px;
+          font-weight: 300;
+          vertical-align: middle;
+
+          @media (min-width: 350px) and (max-width: 1200px) {
+            display: none;
+          }
+        }
+
+        img {
+          fill: $color-primary;
+          color: $color-primary;
+          margin: 0px 10px 0px 0px;
+          vertical-align: middle;
+
+          .header-transparent & {
+            fill: #fff;
+          }
+        }
+
+        .header-minimal & {
+          height: 80px;
+          padding: 0px;
+          text-align: center;
+          width: 80px;
+
+          img, svg {
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
   .header-transparent & {
     background-color: transparent;
     border-bottom: 1px solid rgba(white, .2);
     box-shadow: none;
-  }
-}
-
-.header-inner {
-  display: table;
-  position: relative;
-  width: 100%;
-}
-
-.header-logo {
-  display: table-cell;
-  padding: 0px 45px 0px 0px;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 1px;
-
-  a {
-    color: $color-black;
-
-    &:active, &:focus, &:hover {
-      color: $color-black;
-      text-decoration: none;
-
-      .header-transparent & {
-        color: #fff;
-      }
-    }
-
-    .header-transparent & {
-      color: #fff;
-    }
-  }
-
-  span {
-    font-size: 22px;
-    font-weight: 300;
-    vertical-align: middle;
-
-    @media (min-width: 750px) and (max-width: 1200px) {
-      display: none;
-    }
-  }
-
-  img {
-    fill: $color-primary;
-    color: $color-primary;
-    margin: 0px 10px 0px 0px;
-    vertical-align: middle;
-
-    .header-transparent & {
-      fill: #fff;
-    }
-  }
-
-  .header-minimal & {
-    height: 80px;
-    padding: 0px;
-    text-align: center;
-    width: 80px;
-
-    img, svg {
-      margin: 0px;
-    }
   }
 }
 
@@ -303,7 +298,7 @@
       }
     }
 
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: 770px) {
       background-color: #fff;
       float: none;
       left: -15px;
@@ -380,8 +375,7 @@
 }
 
 .header-nav-primary.nav {
-  padding: 0px;
-
+  display: flex;
   .fa {
     font-size: 8px;
     margin-left: 10px;
@@ -391,70 +385,13 @@
   > li {
     > a {
       padding: 20px 17px;
+      text-decoration: none;
     }
 
     &:last-child {
       > a {
         padding-right: 0px;
       }
-    }
-  }
-}
-
-.header-nav-secondary.nav {
-  > li {
-    > a {
-      color: $color-gray-dark;
-      font-size: 12px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
-}
-
-.header-nav-social.nav {
-  margin: 2px 20px 0px 5px;
-}
-
-.header-top {
- // @extend .clearfix;
-
-  border-bottom: 1px solid rgba(black, .05);
-  padding: 6px 0px 2px 0px;
-
-  @media (max-width: $screen-xs-max) {
-    display: none;
-  }
-}
-
-.header-bottom {
- // @extend .clearfix;
-}
-
-.header-search {
-  float: right;
-  margin: 8px 0px 0px 0px;
-  width: 260px;
-
-  input {
-    height: 34px;
-  }
-
-  .btn {
-    border-radius: 0px;
-    border: 2px solid $color-gray;
-    border-left: 0px;
-    font-size: 13px;
-    margin-left: -2px !important;
-    transition: all .15s linear;
-
-    &:hover {
-      background-color: $color-gray;
-    }
-
-    &:active, &:focus {
-      box-shadow: none;
-      outline: 0px;
     }
   }
 }
@@ -481,10 +418,6 @@
   transition: all .3s linear;
   width: 30px;
 
-  i {
-    color: #fff;
-  }
-
   &:hover {
     color: #fff;
     transform: rotate(90deg);
@@ -492,25 +425,3 @@
   }
 }
 
-.navbar-toggle {
-  border: 1px solid $color-black-light;
-  border-radius: 0px;
-  float: right;
-  margin: 14px 0px;
-
-  .icon-bar {
-    background-color: $color-black-light;
-  }
-
-  .header-transparent & {
-    border: 1px solid #fff;
-
-    .icon-bar {
-      background-color: #fff;
-    }
-  }
-
-  .header-minimal & {
-    margin-right: 15px;
-  }
-}

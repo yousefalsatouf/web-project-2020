@@ -23,8 +23,10 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addStyleEntry('header', './assets/scss/header.scss')
-    .addStyleEntry('footer', './assets/scss/footer.scss')
+    .addEntry('app', './assets/js/app.js')
+    .addStyleEntry('home', './assets/scss/home.scss')
+    //.addStyleEntry('header', './assets/scss/_header.scss')
+    //.addStyleEntry('footer', './assets/scss/_footer.scss')
     //.addEntry('header', './assets/js/header.js')
     //.addEntry('footer', './assets/js/footer.js')
 

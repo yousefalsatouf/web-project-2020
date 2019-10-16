@@ -465,7 +465,7 @@
 	}
 
 	// Colorbox's markup needs to be added to the DOM prior to being called
-	// so that the browser will go ahead and load the CSS background images.
+	// so that the browser will go ahead and load the CSS background img.
 	function appendHTML() {
 		if (!$box) {
 			init = false;
@@ -847,7 +847,7 @@
 
 				slideshow();
 
-				// Preloads images within a rel group
+				// Preloads img within a rel group
 				if (settings.get('preloading')) {
 					$.each([getIndex(-1), getIndex(1)], function(){
 						var img,

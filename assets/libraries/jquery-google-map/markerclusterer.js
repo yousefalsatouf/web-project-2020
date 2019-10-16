@@ -76,7 +76,7 @@
  *  within the image defined by <code>url</code>. The format is <code>"xpos ypos"</code>
  *  (the same format as for the CSS <code>background-position</code> property). You must set
  *  this property appropriately when the image defined by <code>url</code> represents a sprite
- *  containing multiple images.
+ *  containing multiple img.
  */
 /**
  * @name ClusterIconInfo
@@ -663,7 +663,7 @@ Cluster.prototype.isMarkerAlreadyAdded_ = function (marker) {
  * @property {Array} [imageSizes=MarkerClusterer.IMAGE_SIZES]
  *  An array of numbers containing the widths of the group of
  *  <code>imagePath</code>n.<code>imageExtension</code> image files.
- *  (The images are assumed to be square.)
+ *  (The img are assumed to be square.)
  */
 /**
  * Creates a MarkerClusterer object with the options specified in {@link MarkerClustererOptions}.
@@ -1617,7 +1617,7 @@ MarkerClusterer.BATCH_SIZE_IE = 500;
 
 
 /**
- * The default root name for the marker cluster images.
+ * The default root name for the marker cluster img.
  *
  * @type {string}
  * @constant
@@ -1626,7 +1626,7 @@ MarkerClusterer.IMAGE_PATH = "http://google-maps-utility-library-v3.googlecode.c
 
 
 /**
- * The default extension name for the marker cluster images.
+ * The default extension name for the marker cluster img.
  *
  * @type {string}
  * @constant
@@ -1635,7 +1635,7 @@ MarkerClusterer.IMAGE_EXTENSION = "png";
 
 
 /**
- * The default array of sizes for the marker cluster images.
+ * The default array of sizes for the marker cluster img.
  *
  * @type {Array.<number>}
  * @constant

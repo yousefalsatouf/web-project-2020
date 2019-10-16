@@ -755,7 +755,7 @@
 		this.drag.updatedX = this.drag.start;
 
 		// to do/check
-		// prevent links and images dragging;
+		// prevent links and img dragging;
 		if (this.drag.targetEl.tagName === "IMG" || this.drag.targetEl.tagName === "A") {
 			this.drag.targetEl.draggable = false;
 		}
@@ -850,7 +850,7 @@
 
 		this.trigger('dragged');
 
-		// prevent links and images dragging;
+		// prevent links and img dragging;
 		this.drag.targetEl.removeAttribute("draggable");
 
 		// remove drag event listeners
@@ -1488,7 +1488,7 @@
 	};
 
 	/**
-	 * Preloads images with auto width.
+	 * Preloads img with auto width.
 	 * @protected
 	 * @todo Still to test
 	 */
