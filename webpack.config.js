@@ -24,6 +24,8 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
+    .addEntry('home-script', './assets/js/components/home.js')
+    .addEntry('superlist', './assets/js/components/superlist.js')
     .addStyleEntry('home', './assets/scss/home.scss')
     //.addStyleEntry('header', './assets/scss/_header.scss')
     //.addStyleEntry('footer', './assets/scss/_footer.scss')
@@ -59,7 +61,10 @@ Encore
 
     // enables Sass/SCSS support
     .enableSassLoader()
-
+    .copyFiles({
+        from: './assets/img',
+        to: 'images/[path][name].[hash:8].[ext]'
+    })
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
 

@@ -1,3 +1,7 @@
+import $ from 'jquery';
+
+console.log('hello from superlist; ');
+
 $(document).ready(function() {
     'use strict';
 

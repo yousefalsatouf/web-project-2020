@@ -7,12 +7,10 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 import '../scss/home.scss';
-
+import './components/home';
+import './components/superlist';
 import $ from 'jquery';
 import 'bootstrap';
-
-
-
 
 
 //import theFunctionName from './superlist.js');
