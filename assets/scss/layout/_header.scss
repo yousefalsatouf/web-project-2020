@@ -85,7 +85,10 @@
 .header-content {
   display: table-cell;
   vertical-align: middle;
+  .header-search
+  {
 
+  }
   .nav {
     float: right;
     height: 4rem;
@@ -101,6 +104,11 @@
       &:hover{
         border-bottom: 4px solid $color-secondary;
       }
+    }
+
+    li:last-child
+    {
+      margin-bottom: 1rem;
     }
 
     @media (min-width: 750px) {
@@ -383,11 +391,14 @@
 
 .header-nav-primary.nav {
   display: flex;
+
   .fa {
     font-size: 8px;
     margin-left: 10px;
     vertical-align: 2px;
   }
+
+
 
   > li {
     > a {

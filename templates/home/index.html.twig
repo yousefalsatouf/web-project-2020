@@ -7,7 +7,27 @@
 {% block body %}
     <div id="home" class="page-wrapper">
         {% include 'extendsFiles/header.html.twig' %}
-        <h1>Hi There from Home</h1>
+        <div class="hero-video">
+            <video preload="metadata" autoplay="" muted="" loop="">
+                <source src="http://preview.byaviators.com/template/superlist/assets/img/tmp/video.mp4" type="video/mp4">
+            </video>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                        <h1>Directory Template</h1>
+                        <p>Create your own directory website by using Superlist HTML template <br> incorporating all features of modern directory website.</p>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for event, hotel, restaurant, job ... ">
+                            <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">Search</button>
+                    </span>
+                        </div><!-- /.input-group -->
+                    </div><!-- /.col-* -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.hero-video -->
         {% include 'extendsFiles/footer.html.twig' %}
     </div>
 {% endblock %}

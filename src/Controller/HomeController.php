@@ -20,7 +20,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'home_title' => $homeTitle,
             'superlist' => $superList,
-            'list' => $headerList,
+            'lists' => $headerList,
         ]);
     }
 }

@@ -1,4 +1,3 @@
-
 //helpers ...
 @import 'helpers/variables';
 @import 'helpers/buttons';
@@ -54,7 +53,17 @@
       li:first-child
       {
         border-bottom: 4px solid $color-secondary;
+        a{
+          color: $color-secondary;
+        }
       }
+    }
+  }
+  .container
+  {
+    .row
+    {
+      justify-content: center;
     }
   }
 }
