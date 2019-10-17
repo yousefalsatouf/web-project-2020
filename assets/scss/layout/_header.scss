@@ -88,16 +88,23 @@
 
   .nav {
     float: right;
-    padding: 15px 0px;
+    height: 4rem;
 
     .header-minimal & {
       float: left;
     }
+    li
+    {
+      height: 50%;
+      margin: 0px 3px;
+      text-align: center;
+      &:hover{
+        border-bottom: 4px solid $color-secondary;
+      }
+    }
 
     @media (min-width: 750px) {
       > li {
-        margin: 0px;
-
         > a {
           border-radius: 0px;
           color: $color-black;
@@ -164,7 +171,7 @@
           z-index: 10;
 
           li {
-            border-bottom: 1px solid $color-gray-medium;
+
 
             a {
               color: $color-gray-darker;
@@ -315,7 +322,7 @@
 
       li {
         display: block;
-        margin: 0px;
+        margin: 0px 3px;
         float: none;
 
         &.active {

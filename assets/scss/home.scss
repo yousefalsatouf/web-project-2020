@@ -44,3 +44,17 @@
 //layout ...
 @import 'layout/header';
 @import 'layout/footer';
+
+#home
+{
+  .header
+  {
+    .nav
+    {
+      li:first-child
+      {
+        border-bottom: 4px solid $color-secondary;
+      }
+    }
+  }
+}

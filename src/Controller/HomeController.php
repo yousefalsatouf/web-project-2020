@@ -14,12 +14,13 @@ class HomeController extends AbstractController
     {
         $homeTitle = 'Superlist - Directory Template';
         $superList = 'Superlist';
-        $srcWhiteLogo = '../../assets/img/logo-white.png';
+
+        $headerList = array('Home', 'Listing', 'Pages', 'Blog', 'Admin', 'Contact');
 
         return $this->render('home/index.html.twig', [
             'home_title' => $homeTitle,
             'superlist' => $superList,
-            'srcWhiteLogoImg' => $srcWhiteLogo,
+            'list' => $headerList,
         ]);
     }
 }

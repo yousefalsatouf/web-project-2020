@@ -55,7 +55,7 @@ APP MANAGEMENT WITH CONTROLLER ...
 ok, now start to make controller to mange display ...
 
 - create a controller by php bin/console make:controller
--
+- set the annotation by running => composer require annotations
 
 
 

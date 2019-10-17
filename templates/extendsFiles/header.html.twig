@@ -3,7 +3,7 @@
         <div class="container">
             <div class="header-inner">
                 <div class="header-logo">
-                    <a href="">
+                    <a href="{{ path('home') }}">
                         <img src="{{ asset('build/images/logo-white.fbc2b33d.png') }}" alt="Logo">
                         <span>{{ superlist }}</span>
                     </a>
@@ -18,15 +18,16 @@
                         </div><!-- /.header-action -->
 
                         <ul class="header-nav-primary nav nav-pills collapse navbar-collapse">
-                            <li class="active">
-                                <a href="#">Home <i class="fa"></i></a>
+
+                            <li >
+                                <a href="{{ path('home') }}">Home <i class="fa"></i></a>
                             </li>
 
                             <li >
                                 <a href="#">Listing <i class="fa"></i></a>
                             </li>
 
-                            <li class="has-mega-menu ">
+                            <li >
                                 <a href="#">Pages <i class="fa"></i></a>
                             </li>
 
@@ -35,11 +36,11 @@
                             </li>
 
                             <li >
-                                <a href="#">Admin <i class="fa"></i></a>
+                                <a href="{{ path('admin') }}">Admin <i class="fa"></i></a>
                             </li>
 
                             <li >
-                                <a href="#">Contact <i class="fa"></i></a>
+                                <a href="{{ path('contact') }}">Contact <i class="fa"></i></a>
                             </li>
                         </ul>
                     </div><!-- /.header-bottom -->
