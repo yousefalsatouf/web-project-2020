@@ -402,7 +402,7 @@
     display: table-cell;
     vertical-align: top;
 
-    @media (max-width: $screen-md-max) {
+    @media (max-width: 900px) {
         display: block;
     }
 }
@@ -415,7 +415,7 @@
     position: relative;
     width: 262px;
 
-    @media (max-width: $screen-md-max) {
+    @media (max-width: 900px) {
         width: 100%;
     }
 }
@@ -428,7 +428,7 @@
     padding: 30px 30px 30px 30px;
     width: 260px;
 
-    @media (max-width: $screen-md-max) {
+    @media (max-width: 900px) {
         padding: 0px 30px 30px 30px;
         width: 100%;
     }
@@ -517,7 +517,7 @@
     padding: 0px 15px;
     width: 50%;
 
-    @media (max-width: $screen-sm-max) {
+    @media (max-width: 400px) {
         width: 100%;
     }
 
@@ -591,7 +591,7 @@
 }
 
 .card-small {
-    @include clearfix;
+    //@include clearfix;
 
     background-color: #fff;
     margin: 0px 0px 20px 0px;
