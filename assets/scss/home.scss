@@ -30,4 +30,66 @@
       justify-content: center;
     }
   }
+  .block-list{
+    justify-content: center;
+    text-align: center;
+    margin: 3rem auto;
+    .lists{
+     flex-wrap: wrap;
+      >div{
+        line-height: 2;
+        background-color: $color-black-light;
+        margin: 0.5rem;
+        padding: 2rem;
+        box-shadow: 10px 10px 20px;
+        &:hover{
+          transition: all 0.5s;
+          box-shadow: 10px 10px 15px $color-black-light;
+          background-color: white;
+          transform: scaleX(1.1);
+          p{
+            color: $color-black;
+          }
+
+        }
+        h1{
+          color: $color-secondary;
+        }
+        p{
+          color: white;
+        }
+        button{
+          background-color: $color-primary;
+          border: 0;
+          color: white;
+          font-size: 15px;
+          font-weight: 500;
+          width: 5rem;
+        }
+      }
+    }
+  }
+  .question{
+    background-color: $color-secondary;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem auto;
+    .row{
+      .question-title{
+        h2{
+          margin-bottom: 5px;
+        }
+      }
+      .contact-info{
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1rem;
+        span{
+          margin: auto 1rem;
+        }
+      }
+    }
+  }
 }
