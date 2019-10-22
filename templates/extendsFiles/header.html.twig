@@ -11,35 +11,23 @@
 
                 <div class="header-content">
                     <div class="header-bottom">
-                        <!--<div class="header-action">
-                            <a href="listing-submit.html" class="header-action-inner" title="Add Listing" data-toggle="tooltip" data-placement="bottom">
-                                <i class="fa fa-plus"></i>
-                            </a>
-                        </div> -->
                         <ul class="header-nav-primary nav nav-pills collapse navbar-collapse">
 
-                            <li >
-                                <a href="{{ path('home') }}">Home <i class="fa"></i></a>
-                            </li>
+                            {% set links = {
+                                home: { url: '/', title: 'Home' },
+                                lists: { url: '/lists', title: 'Lists' },
+                                admin: { url: '/admin', title: 'Admin' },
+                                contact: { url: '/contact', title: 'Contact' },
+                                login: { url: '/login', title: 'Login' },
+                                register: { url: '/register', title: 'Register' },
+                            }
+                            %}
 
-                            <li >
-                                <a href="{{ path('admin') }}">Lists <i class="fa"></i></a>
-                            </li>
-
-                            <li >
-                                <a href="{{ path('admin') }}">Admin <i class="fa"></i></a>
-                            </li>
-
-                            <li >
-                                <a href="{{ path('contact') }}">Contact <i class="fa"></i></a>
-                            </li>
-                            <li >
-                                <a href="{{ path('login') }}">Login <i class="fa"></i></a>
-                            </li>
-
-                            <li >
-                                <a href="{{ path('register') }}">Register <i class="fa"></i></a>
-                            </li>
+                            {% for link in links %}
+                                <li >
+                                    <a href="{{ path(link.url) }}">{{ link.title }} <i class="fa"></i></a>
+                                </li>
+                            {% endfor %}
                             <li >
                                 <div class="header-search">
                                     <input type="text" class="form-control" placeholder="Search for...">
