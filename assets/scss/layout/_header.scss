@@ -85,10 +85,6 @@
 .header-content {
   display: table-cell;
   vertical-align: middle;
-  .header-search
-  {
-
-  }
   .nav {
     float: right;
     height: 4rem;
@@ -104,11 +100,6 @@
       &:hover{
         border-bottom: 4px solid $color-secondary;
       }
-    }
-
-    li:last-child
-    {
-      margin-bottom: 1rem;
     }
 
     @media (min-width: 750px) {

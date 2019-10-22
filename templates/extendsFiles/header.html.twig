@@ -3,37 +3,19 @@
         <div class="container">
             <div class="header-inner">
                 <div class="header-logo">
-                    <a href="{{ path('home') }}">
+                    <a href="{{ path('Home') }}">
                         <img src="{{ asset('build/images/logo-white.fbc2b33d.png') }}" alt="Logo">
                         <span>{{ superlist }}</span>
                     </a>
                 </div><!-- /.header-logo -->
-
                 <div class="header-content">
                     <div class="header-bottom">
                         <ul class="header-nav-primary nav nav-pills collapse navbar-collapse">
-
-                            {% set links = {
-                                home: { url: '/', title: 'Home' },
-                                lists: { url: '/lists', title: 'Lists' },
-                                admin: { url: '/admin', title: 'Admin' },
-                                contact: { url: '/contact', title: 'Contact' },
-                                login: { url: '/login', title: 'Login' },
-                                register: { url: '/register', title: 'Register' },
-                            }
-                            %}
-
                             {% for link in links %}
                                 <li >
-                                    <a href="{{ path('/') }}">{{ link.title }} <i class="fa"></i></a>
+                                    <a href="{{ path(link) }}">{{ link }} <i class="fa"></i></a>
                                 </li>
                             {% endfor %}
-                            <li >
-                                <div class="header-search">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                </div>
-                            </li>
-
                         </ul>
                     </div><!-- /.header-bottom -->
                 </div><!-- /.header-content -->
