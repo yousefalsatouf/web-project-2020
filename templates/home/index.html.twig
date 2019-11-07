@@ -29,43 +29,57 @@
             </div><!-- /.container -->
         </div><!-- /.hero-video -->
 
+        <div class="container slider">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    {% for counter in 1..5 %}
+                        <li data-target="#demo" data-slide-to="{{ counter }}"></li>
+                    {% endfor %}
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ asset('build/images/tmp/gallery-8.9ae8163f.jpg') }}" alt="Los Angeles" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h1 class="cat-title">Category of service !</h1>
+                            <p class="cat-description">Here are dynamic  service's categories from the database</p>
+                        </div>
+                    </div>
+                    {% for index, cat in cats %}
+                        <div class="carousel-item">
+                            {% set img = 'build/images/tmp/gallery-7.30b6da4d.jpg' %}
+                            <img src="{{ asset(img) }}" alt="Los Angeles" width="1100" height="500">
+                            <div class="carousel-caption">
+                                <h3 class="cat-title">{{ cat.nom }}</h3>
+                                <span class="cat-index">{{ index }}</span>
+                                <p class="cat-description">{{ cat.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+
         <div class="container block-list">
             <div class=" row lists-header">
                 <h1 class="col-lg-12">Hand Picked by Superlist</h1>
                 <p>Check out the best places &amp; events in the city. Each one is worth<br> of visiting. Experience which you never forget.</p>
             </div><!-- /.page-header -->
-
             <div class="row lists">
-                <div class="col-lg-3">
-                    <h1>title List 1</h1>
-                    <p>here is short description about this first list .. </p>
-                    <a href="#"><button>Detail +</button></a>
-                </div>
-                <div class="col-lg-3">
-                    <h1>title List 1</h1>
-                    <p>here is short description about this first list .. </p>
-                    <a href="#"><button>Detail +</button></a>
-                </div>
-                <div class="col-lg-3">
-                    <h1>title List 1</h1>
-                    <p>here is short description about this first list .. </p>
-                    <a href="#"><button>Detail +</button></a>
-                </div>
-                <div class="col-lg-3">
-                    <h1>title List 1</h1>
-                    <p>here is short description about this first list .. </p>
-                    <a href="#"><button>Detail +</button></a>
-                </div>
-                <div class="col-lg-3">
-                    <h1>title List 1</h1>
-                    <p>here is short description about this first list .. </p>
-                    <a href="#"><button>Detail +</button></a>
-                </div>
-                <div class="col-lg-3">
-                    <h1>title List 1</h1>
-                    <p>here is short description about this first list .. </p>
-                    <a href="#"><button>Detail +</button></a>
-                </div>
+                {% for recipient in recipients %}
+                    <div class="col-lg-3">
+                        <h3 class="list-title">{{ recipient.nom }}</h3>
+                        <p class="list-email">{{ recipient.eMailContact }}</p>
+                        <p class="list-num-tel">{{ recipient.numTel }}</p>
+                        <p class="list-site">{{ recipient.siteInternet }}</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -90,7 +104,4 @@
         </div>
         {% include 'extendsFiles/footer.html.twig' %}
     </div>
-{% endblock %}
-{% block javascripts %}
-    {{ encore_entry_script_tags('home') }}
 {% endblock %}

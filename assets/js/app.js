@@ -7,8 +7,8 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 import '../scss/home.scss';
-import './components/home';
-import './components/superlist';
+import './components/home.js';
+import './components/superlist.js';
 import $ from 'jquery';
 import 'bootstrap';
 
@@ -16,5 +16,3 @@ import 'bootstrap';
 //import theFunctionName from './superlist.js');
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
-
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

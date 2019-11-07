@@ -19,6 +19,7 @@ class PrestataireFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 1; $i <= self::NBR_PRESTATAIRE; $i++){
             $pres = new Prestataire();
             $pres->setNom($faker->company)
+                 ->setNumTel($faker->phoneNumber)
                  ->setAdresseNbr($faker->buildingNumber)
                  ->setAdresseRue($faker->streetName)
                  ->setEmail($faker->name."@".$pres->getNom().".com")

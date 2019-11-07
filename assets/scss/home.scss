@@ -23,6 +23,29 @@
       }
     }
   }
+  .slider
+  {
+    margin-top: 3rem;
+    .cat-title
+    {
+      color: $color-secondary;
+      font-weight: bolder;
+      font-size: 35px;
+    }
+    .cat-index
+    {
+      color: $color-primary;
+      font-weight: bolder;
+      font-size: 33px;
+    }
+    .cat-description
+    {
+      font-weight: 700;
+      font-size: 30px;
+      padding: 3rem 0.5rem;
+      line-height: 1.5;
+    }
+  }
   .container
   {
     .row
@@ -44,19 +67,46 @@
         box-shadow: 10px 10px 20px;
         &:hover{
           transition: all 0.5s;
-          box-shadow: 10px 10px 15px $color-black-light;
-          background-color: white;
-          transform: scaleX(1.1);
-          p{
+          box-shadow: 15px 15px 20px $color-black-light;
+          background-color: $color-secondary;
+          transform: scaleX(1.05);
+          .list-title
+          {
             color: $color-black;
+            font-weight: 900;
+            font-size: 25px;
           }
-
+          .list-email
+          {
+            color: $color-primary;
+            font-weight: 700;
+            font-size: 20px;
+          }
+          .list-num-tel, .list-site
+          {
+            font-weight: 500;
+            font-size: 18px;
+            color: $color-black-light;
+          }
         }
-        h1{
+        .list-title
+        {
           color: $color-secondary;
+          font-weight: 900;
+          font-size: 25px;
         }
-        p{
-          color: white;
+        .list-email
+        {
+          color: $color-gray;
+          font-weight: 700;
+          font-size: 20px;
+        }
+        .list-num-tel, .list-site
+        {
+          color: $color-primary-light;
+          font-weight: 500;
+          font-size: 18px;
+
         }
         button{
           background-color: $color-primary;
