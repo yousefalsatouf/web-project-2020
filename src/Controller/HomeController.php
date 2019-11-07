@@ -21,7 +21,7 @@ class HomeController extends AbstractController
         $categories = $category->findAll();
 
         $recipient = $this->getDoctrine()->getRepository(Prestataire::class);
-        $recipients = $recipient->findBy(array(),array(-4));
+        $recipients = $recipient->findAll();
 
         return $this->render('home/index.html.twig', [
             'cats' => $categories,
