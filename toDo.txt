@@ -1,6 +1,6 @@
 SYMFONY PROJECT INSTALL ;;;...
 
-
+Remove history file from cache => git rm --cached .env
 
 symfony project to do =>
 - first install symfony by symfony new project-name --full for full app or symfony new project-name for little app;
