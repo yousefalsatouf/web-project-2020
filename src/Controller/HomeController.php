@@ -20,8 +20,17 @@ class HomeController extends AbstractController
         $category = $this->getDoctrine()->getRepository(CategorieDeServices::class);
         $categories = $category->findAll();
 
-        $recipient = $this->getDoctrine()->getRepository(Prestataire::class);
-        $recipients = $recipient->findAll();
+       /* $recipient = $this->getDoctrine()->getRepository(Prestataire::class);
+        $recipients = $recipient->findAll();*/
+
+        $recipient = $this->getDoctrine()->getEntityManager();
+        $query = $recipient->createQuery(
+            'SELECT e_mail_contact, nom, num_tel, num_tva, site_internet  
+             FROM prestataire 
+             ORDER BY id DESC LIMIT 4'
+        );
+
+        $recipients = $query->setMaxResults(4)->getResult();
 
         return $this->render('home/index.html.twig', [
             'cats' => $categories,
