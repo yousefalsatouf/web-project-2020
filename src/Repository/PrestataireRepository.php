@@ -36,7 +36,14 @@ class PrestataireRepository extends ServiceEntityRepository
     }
     */
 
-    /*
+    public function findFour($nbre){
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.inscription', 'ASC')
+            ->setMaxResults($nbre)
+            ->getQuery()
+            ->getResult();
+    }
+        /*
     public function findOneBySomeField($value): ?Prestataire
     {
         return $this->createQueryBuilder('p')
