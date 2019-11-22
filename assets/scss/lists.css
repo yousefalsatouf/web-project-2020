@@ -1,37 +1,22 @@
 /*
 Error: File to import not found or unreadable: ~bootstrap.
-        on line 2 of home.scss
-        from line 2 of lists.scss
+        on line 2 of lists.scss
 
-1: // Home ..
-2: @import "home";
+1: // bootstrap ...
+2: @import '~bootstrap';
 3: 
-4: #lists
-5: {
+4: // superList ...
+5: @import 'components/superlist';
 6: 
-7: }
+7: //layout ...
 
 Backtrace:
-home.scss:2
 lists.scss:2
 C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/import_node.rb:67:in `rescue in import'
 C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/import_node.rb:44:in `import'
 C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/import_node.rb:28:in `imported_file'
 C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/import_node.rb:37:in `css_import?'
 C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/perform.rb:310:in `visit_import'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/perform.rb:325:in `map'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
 C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 C:/Ruby25/lib/ruby/gems/2.5.0/gems/sass-3.5.7/lib/sass/stack.rb:79:in `block in with_base'
@@ -64,4 +49,4 @@ C:/Ruby25/bin/sass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ~bootstrap.\A         on line 2 of home.scss\A         from line 2 of lists.scss\A \A 1: // Home ..\A 2: @import \"home\";\A 3: \A 4: #lists\A 5: {\A 6: \A 7: }"; }
+  content: "Error: File to import not found or unreadable: ~bootstrap.\A         on line 2 of lists.scss\A \A 1: // bootstrap ...\A 2: @import '~bootstrap';\A 3: \A 4: // superList ...\A 5: @import 'components/superlist';\A 6: \A 7: //layout ..."; }

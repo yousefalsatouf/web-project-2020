@@ -1,7 +1,36 @@
-// Home ..
-@import "home";
+// bootstrap ...
+@import '~bootstrap';
+
+// superList ...
+@import 'components/superlist';
+
+//layout ...
+@import 'layout/header';
+@import 'layout/footer';
 
 #lists
 {
-
+  .header
+  {
+    .nav
+    {
+      li:nth-child(2)
+      {
+        border-bottom: 4px solid $color-secondary;
+        a{
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+  .provider
+  {
+    h1
+    {
+      font-size: 40px;
+      font-weight: 900;
+      color:$color-black;
+      padding: 8rem;
+    }
+  }
 }

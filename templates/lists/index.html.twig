@@ -5,18 +5,62 @@
     {{ encore_entry_link_tags('lists') }}
 {% endblock %}
 {% block body %}
-    <div id="home" class="page-wrapper">
+    <div id="lists" class="page-wrapper">
         {% include 'extendsFiles/header.html.twig' %}
-        <div id="lists">
-            <div class="document-title">
-                <h1>Grid Version</h1>
-
-                <ul class="breadcrumb">
-                    <li><a href="#">Superlist</a></li>
-                    <li><a href="#">Listing</a></li>
-                </ul>
+            <div class="document-title text-center provider" style="background: url('{{ asset('/build/images/tmp/partner-5.png') }}');">
+                <h1>List of Providers</h1>
             </div><!-- /.document-title -->
+
+        <div class="container">
+            <form class="filter" method="post" action="?">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <div class="form-group">
+                            <input type="text" placeholder="Keyword" class="form-control">
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-* -->
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="form-group">
+                            <select class="form-control" title="Select Location">
+                                <option>Bronx</option>
+                                <option>Brooklyn</option>
+                                <option>Manhattan</option>
+                                <option>Staten Island</option>
+                                <option>Queens</option>
+                            </select>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-* -->
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="form-group">
+                            <select class="form-control" title="Select Category">
+                                <option value="">Automotive</option>
+                                <option value="">Jobs</option>
+                                <option value="">Nightlife</option>
+                                <option value="">Services</option>
+                            </select>
+                        </div><!-- /.form-group -->
+                    </div><!-- /.col-* -->
+                </div><!-- /.row -->
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="filter-actions">
+                            <a href="#"><i class="fa fa-close"></i> Reset Filter</a>
+                            <a href="#"><i class="fa fa-save"></i> Save Search</a>
+                        </div><!-- /.filter-actions -->
+                    </div><!-- /.col-* -->
+
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary">Redefine Search Result</button>
+                    </div><!-- /.col-* -->
+                </div><!-- /.row -->
+            </form>
         </div>
-        {% include 'extendsFiles/footer.html.twig' %}
+
+    {% include 'extendsFiles/footer.html.twig' %}
     </div>
 {% endblock %}
