@@ -1,11 +1,22 @@
 {% extends '/base.html.twig' %}
 
 {% block title %}{{ lists_title }}{% endblock %}
-
+{% block stylesheets %}
+    {{ encore_entry_link_tags('lists') }}
+{% endblock %}
 {% block body %}
-    <div id="lists" class="page-wrapper">
+    <div id="home" class="page-wrapper">
         {% include 'extendsFiles/header.html.twig' %}
-        <h1>Hi There from Lists</h1>
+        <div id="lists">
+            <div class="document-title">
+                <h1>Grid Version</h1>
+
+                <ul class="breadcrumb">
+                    <li><a href="#">Superlist</a></li>
+                    <li><a href="#">Listing</a></li>
+                </ul>
+            </div><!-- /.document-title -->
+        </div>
         {% include 'extendsFiles/footer.html.twig' %}
     </div>
 {% endblock %}

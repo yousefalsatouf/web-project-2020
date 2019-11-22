@@ -27,6 +27,7 @@ Encore
     .addEntry('home-script', './assets/js/components/home.js')
     .addEntry('superlist', './assets/js/components/superlist.js')
     .addStyleEntry('home', './assets/scss/home.scss')
+    .addStyleEntry('lists', './assets/scss/lists.scss')
     //.addStyleEntry('header', './assets/scss/_header.scss')
     //.addStyleEntry('footer', './assets/scss/_footer.scss')
     //.addEntry('header', './assets/js/header.js')
