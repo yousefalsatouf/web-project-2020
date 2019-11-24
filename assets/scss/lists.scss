@@ -43,12 +43,13 @@
     }
     .lists{
       flex-wrap: wrap;
-      justify-content: space-between;
+      //justify-content: space-between;
       >div{
         line-height: 2;
         background-color: $color-black-light;
         padding: 2rem;
         box-shadow: 10px 10px 20px;
+        border: 1px solid $color-black;
         &:hover{
           transition: all 0.5s;
           box-shadow: 15px 15px 20px $color-black-light;
