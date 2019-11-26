@@ -114,7 +114,9 @@
           color: white;
           font-size: 15px;
           font-weight: 500;
-          width: 5rem;
+          width: 100%;
+          display: flex;
+          justify-content: center;
         }
       }
     }

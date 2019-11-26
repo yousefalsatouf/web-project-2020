@@ -7,9 +7,12 @@
 {% block body %}
     <div id="detail" class="page-wrapper">
         {% block header %}
-            {% include 'extendsFiles/header.html.twig' %}
+            {% include 'helpers/_header.html.twig' %}
         {% endblock %}
-            <div class="container">
+        <div class="document-title text-center provider" style="background: url('{{ asset('/build/images/tmp/partner-5.png') }}');">
+            <h1>Details of {{ recipient.nom }}</h1>
+        </div><!-- /.document-title -->
+        <div class="container">
                 <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
@@ -28,7 +31,7 @@
                 </div>
             </div>
         {% block footer %}
-            {% include 'extendsFiles/footer.html.twig' %}
+            {% include 'helpers/_footer.html.twig' %}
         {% endblock %}
     </div>
 {% endblock %}

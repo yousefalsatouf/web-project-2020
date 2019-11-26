@@ -1,13 +1,13 @@
 {% extends '/base.html.twig' %}
 
-{% block title %}{{ lists_title }}{% endblock %}
+{% block title %}{{ recipients_title }}{% endblock %}
 {% block stylesheets %}
     {{ encore_entry_link_tags('lists') }}
 {% endblock %}
 {% block body %}
     <div id="lists" class="page-wrapper">
         {% block header %}
-            {% include 'extendsFiles/header.html.twig' %}
+            {% include 'helpers/_header.html.twig' %}
         {% endblock %}
             <div class="document-title text-center provider" style="background: url('{{ asset('/build/images/tmp/partner-5.png') }}');">
                 <h1>List of Providers</h1>
@@ -74,7 +74,7 @@
                             <p class="list-email">{{ recipient.eMailContact }}</p>
                             <p class="list-num-tel">{{ recipient.numTel }}</p>
                             <p class="list-site">{{ recipient.siteInternet }}</p>
-                            <button class="btn"><a class="text-dark" href="{{ path('detail', {'id': recipient.id}) }}">Detail +</a></button>
+                            <button class="btn"><a class="text-dark" href="{{ path('Recipient', {'id': recipient.id}) }}">Detail +</a></button>
                         </div>
                     {% endfor %}
                 </div>
@@ -82,7 +82,7 @@
         </div>
 
      {% block footer %}
-        {% include 'extendsFiles/footer.html.twig' %}
+        {% include 'helpers/_footer.html.twig' %}
      {% endblock %}
     </div>
 {% endblock %}

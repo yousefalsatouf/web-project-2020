@@ -7,7 +7,7 @@
 {% block body %}
     <div id="home" class="page-wrapper">
         {% block header %}
-            {% include 'extendsFiles/header.html.twig' %}
+            {% include 'helpers/_header.html.twig' %}
         {% endblock %}
         <div class="hero-video">
             <video preload="metadata" autoplay="" muted="" loop="">
@@ -77,11 +77,19 @@
                 {% for recipient in recipients %}
                     <div class="col-lg-3">
                         <h3 class="list-title">{{ recipient.nom }}</h3>
-                        <p class="list-email">{{ recipient.eMailContact }}</p>
+                        <p class="list-email"><a href="#">{{ recipient.eMailContact }}</a></p>
                         <p class="list-num-tel">{{ recipient.numTel }}</p>
-                        <p class="list-site">{{ recipient.siteInternet }}</p>
+                        <p class="list-site"><a href="#">{{ recipient.siteInternet }}</a></p>
                     </div>
                 {% endfor %}
+                <div class="col-lg-3 bg-secondary">
+                    <button class="btn btn-secondary see-more">
+                        <a href="{{ path('Listing') }}">
+                            <h3 class="list-title">See More ++</h3>
+                        </a>
+                    </button>
+                </div>
+                </a>
             </div>
         </div>
 
@@ -105,7 +113,7 @@
                 </div>
         </div>
         {% block footer %}
-            {% include 'extendsFiles/footer.html.twig' %}
+            {% include 'helpers/_footer.html.twig' %}
         {% endblock %}
     </div>
 {% endblock %}
