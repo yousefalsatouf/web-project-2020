@@ -6,7 +6,9 @@
 {% endblock %}
 {% block body %}
     <div id="lists" class="page-wrapper">
-        {% include 'extendsFiles/header.html.twig' %}
+        {% block header %}
+            {% include 'extendsFiles/header.html.twig' %}
+        {% endblock %}
             <div class="document-title text-center provider" style="background: url('{{ asset('/build/images/tmp/partner-5.png') }}');">
                 <h1>List of Providers</h1>
             </div><!-- /.document-title -->
@@ -72,12 +74,15 @@
                             <p class="list-email">{{ recipient.eMailContact }}</p>
                             <p class="list-num-tel">{{ recipient.numTel }}</p>
                             <p class="list-site">{{ recipient.siteInternet }}</p>
+                            <button class="btn"><a class="text-dark" href="{{ path('detail', {'id': recipient.id}) }}">Detail +</a></button>
                         </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
 
-    {% include 'extendsFiles/footer.html.twig' %}
+     {% block footer %}
+        {% include 'extendsFiles/footer.html.twig' %}
+     {% endblock %}
     </div>
 {% endblock %}

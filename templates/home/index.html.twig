@@ -6,7 +6,9 @@
 {% endblock %}
 {% block body %}
     <div id="home" class="page-wrapper">
-        {% include 'extendsFiles/header.html.twig' %}
+        {% block header %}
+            {% include 'extendsFiles/header.html.twig' %}
+        {% endblock %}
         <div class="hero-video">
             <video preload="metadata" autoplay="" muted="" loop="">
                 <source src="http://preview.byaviators.com/template/superlist/assets/img/tmp/video.mp4" type="video/mp4">
@@ -102,6 +104,8 @@
                     </div><!-- /.row -->
                 </div>
         </div>
-        {% include 'extendsFiles/footer.html.twig' %}
+        {% block footer %}
+            {% include 'extendsFiles/footer.html.twig' %}
+        {% endblock %}
     </div>
 {% endblock %}

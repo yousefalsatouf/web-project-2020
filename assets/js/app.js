@@ -8,6 +8,7 @@
 // any CSS you require will output into a single css file (app.css in this case)
 import '../scss/home.scss';
 import '../scss/lists.scss';
+import '../scss/detail.scss';
 
 import './components/home.js';
 import './components/superlist.js';
