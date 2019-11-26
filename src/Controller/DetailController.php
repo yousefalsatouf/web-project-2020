@@ -14,7 +14,6 @@ class DetailController extends AbstractController
     {
         return $this->render('detail/index.html.twig', [
             'controller_name' => 'Detail',
-
         ]);
     }
 }
