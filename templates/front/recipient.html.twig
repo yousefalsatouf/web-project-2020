@@ -9,9 +9,37 @@
         {% block header %}
             {% include 'helpers/_header.html.twig' %}
         {% endblock %}
-        <div class="document-title text-center provider" style="background: url('{{ asset('/build/images/tmp/partner-5.png') }}');">
-            <h1>{{ recipient.nom }}'s Details</h1>
-        </div><!-- /.document-title -->
+        <div class="detail-banner" style="background: url('{{ asset('/build/images/tmp/detail-banner-1.jpg') }}');">
+            <div class="container">
+                <div class="detail-banner-left">
+                    <div class="detail-banner-info">
+                        <div class="detail-label">Restaurant</div>
+                        <div class="detail-verified">Verified</div>
+                    </div><!-- /.detail-banner-info -->
+                    <h2 class="detail-title">{{ recipient.nom }}</h2>
+                    <div class="detail-banner-address">
+                        <i class="fa fa-map-o"></i> 347/26 22nd Avenue, New York City, USA
+                    </div><!-- /.detail-banner-address -->
+
+                    <div class="detail-banner-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div><!-- /.detail-banner-rating -->
+
+                    <div class="detail-banner-btn bookmark">
+                        <i class="fa fa-bookmark-o"></i> <span data-toggle="Bookmarked">Bookmark</span>
+                    </div><!-- /.detail-claim -->
+
+                    <div class="detail-banner-btn heart">
+                        <i class="fa fa-heart-o"></i> <span data-toggle="I Love It">Give Heart</span>
+                    </div><!-- /.detail-claim -->
+
+                </div><!-- /.detail-banner-left -->
+            </div><!-- /.container -->
+        </div><!-- /.detail-banner -->
         <div class="container">
                 <div class="card mb-3">
                     <div class="row no-gutters">
