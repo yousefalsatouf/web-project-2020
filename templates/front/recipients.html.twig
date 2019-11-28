@@ -71,10 +71,10 @@
                     {% for recipient in recipients %}
                         <div class="col-lg-3">
                             <h3 class="list-title">{{ recipient.nom }}</h3>
-                            <p class="list-email">{{ recipient.eMailContact }}</p>
+                            <p class="list-email"><a href="#">{{ recipient.eMailContact }}</a></p>
                             <p class="list-num-tel">{{ recipient.numTel }}</p>
-                            <p class="list-site">{{ recipient.siteInternet }}</p>
-                            <button class="btn"><a class="text-dark" href="{{ path('Recipient', {'id': recipient.id}) }}">Detail +</a></button>
+                            <p class="list-site"><a href="#">{{ recipient.siteInternet }}</a></p>
+                            <button class="btn"><a class="text-dark" href="{{ path('Recipient', {'id': recipient.id}) }}">View</a></button>
                         </div>
                     {% endfor %}
                 </div>
