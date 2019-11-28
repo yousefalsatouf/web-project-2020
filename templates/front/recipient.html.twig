@@ -10,12 +10,12 @@
             {% include 'helpers/_header.html.twig' %}
         {% endblock %}
         <div class="document-title text-center provider" style="background: url('{{ asset('/build/images/tmp/partner-5.png') }}');">
-            <h1>Details of {{ recipient.nom }}</h1>
+            <h1>{{ recipient.nom }}'s Details</h1>
         </div><!-- /.document-title -->
         <div class="container">
                 <div class="card mb-3">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
+                        <div class="col-md-4 ">
                             <img src="{{ asset('./build/images/tmp/agent-5.jpg') }}" class="card-img" alt="...">
                         </div>
                         <div class="col-md-8">

@@ -12,9 +12,10 @@
 {
   .provider
   {
+    height: 10rem;
     h1
     {
-      padding: 1rem;
+      padding: 5rem auto;
     }
   }
   .container
@@ -22,6 +23,7 @@
     .card
     {
       margin: 5rem auto;
+
       .card-title
       {
         font-weight: 900;

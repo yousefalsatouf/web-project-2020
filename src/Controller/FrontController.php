@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\CategorieDeServices;
 use App\Entity\Prestataire;
+use App\Repository\CategorieDeServicesRepository;
 use App\Repository\PrestataireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -59,6 +60,39 @@ class FrontController extends AbstractController
 
         return $this->render('front/recipient.html.twig', [
             'recipient' => $recipient,
+            'detail_name' => 'Detail',
+            'superlist' => 'Superlist',
+            'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),
+            'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
+
+        ]);
+    }
+
+    /**
+     * @Route("/categories", name="Categories")
+     */
+    public function categories()
+    {
+        $category = $this->getDoctrine()->getRepository(CategorieDeServices::class);
+        $categories = $category->findAll();
+        return $this->render('front/categories.html.twig', [
+            'categories' => $categories,
+            'categories_title' => 'Categories',
+            'superlist' => 'Superlist',
+            'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),
+            'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
+        ]);
+    }
+
+    /**
+     * @Route("/category/{id}", name="Category")
+     */
+    public function category(CategorieDeServices $category, CategorieDeServicesRepository $repo)
+    {
+        $category = $repo->find($category);
+
+        return $this->render('front/category.html.twig', [
+            'category' => $category,
             'detail_name' => 'Detail',
             'superlist' => 'Superlist',
             'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),

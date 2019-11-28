@@ -1,0 +1,35 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}{{ detail_name }}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('detail') }}
+{% endblock %}
+{% block body %}
+    <div id="detail" class="page-wrapper">
+        {% block header %}
+            {% include 'helpers/_header.html.twig' %}
+        {% endblock %}
+        <div class="document-title text-center provider" style="background: url('{{ asset('/build/images/tmp/partner-5.png') }}');">
+            <h1>{{ category.nom }}'s Details</h1>
+        </div><!-- /.document-title -->
+        <div class="container">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{ asset('./build/images/tmp/agent-5.jpg') }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title"><b></b>{{ category.nom }}</h3>
+                            <p class="card-text"><b></b>{{ category.valide }}</p>
+                            <p class="card-text"><b></b>{{ category.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% block footer %}
+            {% include 'helpers/_footer.html.twig' %}
+        {% endblock %}
+    </div>
+{% endblock %}
