@@ -30,12 +30,14 @@
                         </form><!-- /.input-group -->
                         {% if is_searched %}
                             {% if find_all %}
+                                <div>
+                                    <h3 class="text-success">OK, search on recipient comes with : ...</h3>
+                                </div>
                                 {% for findOne in find_all %}
                                     <div class="card">
                                         <!-- Heading -->
                                         <div class="card-body">
-                                            <p class="card-title text-secondary text-center">your search on recipient comes with :</p>
-                                            <h3 class="card-title text-center">{{ findOne.nom }}</h3>
+                                            <h3 class="card-title text-info text-center">{{ findOne.nom }}</h3>
                                             <h6 class="card-subtitle text-center">{{ findOne.numTel }}</h6>
                                         </div>
                                         <!-- Image -->
@@ -47,12 +49,14 @@
                                     </div>
                                 {% endfor %}
                             {% elseif find_cat %}
+                                <div>
+                                    <h3 class="text-success">OK, search on recipient comes with : ...</h3>
+                                </div>
                                 {% for findOne in find_cat %}
                                     <div class="card">
                                         <!-- Heading -->
-                                        <p class="card-title text-secondary text-center">your search on category comes with :</p>
                                         <div class="card-body">
-                                            <h3 class="card-title text-center">{{ findOne.nom }}</h3>
+                                            <h3 class="card-title text-info text-center">{{ findOne.nom }}</h3>
                                             <p class="card-subtitle text-center text-dark">{{ findOne.description  }}</p>
                                         </div>
                                         <!-- Text Content -->
