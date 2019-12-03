@@ -7,6 +7,7 @@ use App\Entity\Prestataire;
 use App\Repository\CategorieDeServicesRepository;
 use App\Repository\PrestataireRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class FrontController extends AbstractController
@@ -14,7 +15,7 @@ class FrontController extends AbstractController
     /**
      * @Route("/", name="Home")
      */
-    public function index()
+    public function index(PrestataireRepository $prestataireRepository, Request $request)
     {
         $homeTitle = 'Superlist - Directory Template';
         $superList = 'Superlist';
@@ -25,10 +26,14 @@ class FrontController extends AbstractController
         $recipient = $this->getDoctrine()->getRepository(Prestataire::class);
         $recipients = $recipient->findFour(4);
 
+        $setFind = $request->query->get('find');
+        $getFind = $prestataireRepository->findWithSearch($setFind);
+
         return $this->render('front/index.html.twig', [
             'cats' => $categories,
             'recipients' => $recipients,
             'home_title' => $homeTitle,
+            'find_all'=>$getFind,
             'superlist' => $superList,
             'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),
             'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),

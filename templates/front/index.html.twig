@@ -20,12 +20,17 @@
                         <h1>Directory Template</h1>
                         <p>Create your own directory website by using Superlist HTML template <br> incorporating all features of modern directory website.</p>
 
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for event, hotel, restaurant, job ... ">
-                            <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">Search</button>
-                    </span>
-                        </div><!-- /.input-group -->
+                        <form class="input-group">
+
+                                <input type="text" class="form-control" name="find" placeholder="Search for ... ">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </span>
+
+                        </form><!-- /.input-group -->
+                        {% for findOne in find_all %}
+                            <div class="text-white">{{ findOne.siteInternet }}</div>
+                        {% endfor %}
                     </div><!-- /.col-* -->
                 </div><!-- /.row -->
             </div><!-- /.container -->

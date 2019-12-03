@@ -36,6 +36,26 @@ class PrestataireRepository extends ServiceEntityRepository
     }
     */
 
+    /**
+     * @param string|null $term
+     * @return Prestataire[]
+     */
+
+    public function findWithSearch(?string $term)
+    {
+        $qp = $this->createQueryBuilder('p');
+
+        if ($term)
+        {
+            $qp->andWhere('p.nom LIKE :term')
+               ->setParameter('term','%'.$term.'%');
+        }
+
+        return $qp->orderBy('p.nom', 'DESC')
+                  ->getQuery()
+                  ->getResult();
+    }
+
     public function findFour($nbre){
         return $this->createQueryBuilder('p')
             ->orderBy('p.inscription', 'ASC')
