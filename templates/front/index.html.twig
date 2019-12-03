@@ -22,15 +22,51 @@
 
                         <form class="input-group">
 
-                                <input type="text" class="form-control" name="find" placeholder="Search for ... ">
+                                <input type="text" class="form-control" name="find" placeholder="Search for Categories, recipients ... ">
                                 <span class="input-group-btn">
                                     <button class="btn btn-primary" type="submit">Search</button>
                                 </span>
 
                         </form><!-- /.input-group -->
-                        {% for findOne in find_all %}
-                            <div class="text-white">{{ findOne.siteInternet }}</div>
-                        {% endfor %}
+                        {% if is_searched %}
+                            {% if find_all %}
+                                {% for findOne in find_all %}
+                                    <div class="card">
+                                        <!-- Heading -->
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{ findOne.nom }}</h3>
+                                            <h6 class="card-subtitle text-center">{{ findOne.numTel }}</h6>
+                                        </div>
+                                        <!-- Image -->
+                                        <img src="{{ asset('build/images/tmp/agent-3.jpg') }}" alt="Photo of sunset">
+                                        <!-- Text Content -->
+                                        <div class="card-body">
+                                            <a href="{{ path('Recipient', {id: findOne.id}) }}"><button class="col-lg-12 btn btn-primary "><b>View</b></button></a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% elseif find_cat %}
+                                {% for findOne in find_cat %}
+                                    <div class="card">
+                                        <!-- Heading -->
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center">{{ findOne.nom }}</h3>
+                                            <p class="card-subtitle text-center text-dark">{{ findOne.description  }}</p>
+                                        </div>
+                                        <!-- Text Content -->
+                                        <div class="card-body">
+                                            <a href="{{ path('Category', {id: findOne.id}) }}"><button class="col-lg-12 btn btn-primary "><b>View</b></button></a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <div>
+                                    <h3 class="text-danger">Sorry, No Results Found ...</h3>
+                                </div>
+                            {% endif %}
+                        {% else %}
+
+                        {% endif %}
                     </div><!-- /.col-* -->
                 </div><!-- /.row -->
             </div><!-- /.container -->

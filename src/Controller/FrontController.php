@@ -15,13 +15,16 @@ class FrontController extends AbstractController
     /**
      * @Route("/", name="Home")
      */
-    public function index(PrestataireRepository $prestataireRepository, Request $request)
+    public function index(PrestataireRepository $prestataireRepository, CategorieDeServicesRepository $categorieDeServicesRepository, Request $request)
     {
         $homeTitle = 'Superlist - Directory Template';
         $superList = 'Superlist';
 
         $category = $this->getDoctrine()->getRepository(CategorieDeServices::class);
         $categories = $category->findAll();
+
+        $setFindCat = $request->query->get('find');
+        $getFindCat = $categorieDeServicesRepository->findWithSearchCat($setFindCat);
 
         $recipient = $this->getDoctrine()->getRepository(Prestataire::class);
         $recipients = $recipient->findFour(4);
@@ -34,6 +37,8 @@ class FrontController extends AbstractController
             'recipients' => $recipients,
             'home_title' => $homeTitle,
             'find_all'=>$getFind,
+            'find_cat' => $getFindCat,
+            'is_searched'=>$setFind,
             'superlist' => $superList,
             'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),
             'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),

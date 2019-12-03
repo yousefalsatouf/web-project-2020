@@ -19,6 +19,26 @@ class CategorieDeServicesRepository extends ServiceEntityRepository
         parent::__construct($registry, CategorieDeServices::class);
     }
 
+    /**
+     * @param string|null $term
+     * @return CategorieDeServices[]
+     */
+
+    public function findWithSearchCat(?string $term)
+    {
+        $qp = $this->createQueryBuilder('cds');
+
+        if ($term)
+        {
+            $qp->andWhere('cds.nom LIKE :term')
+                ->setParameter('term','%'.$term.'%');
+        }
+
+        return $qp->orderBy('cds.nom', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return CategorieDeServices[] Returns an array of CategorieDeServices objects
     //  */
@@ -47,4 +67,6 @@ class CategorieDeServicesRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
 }
