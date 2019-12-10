@@ -11,7 +11,7 @@ class CategorieDeServicesFixtures extends Fixture
 {
 
     public const SER_CAT_REF = 'categorieDeService';
-    public const NBR_SER_CAT = 5;
+    public const NBR_SER_CAT = 25;
 
     public function load(ObjectManager $manager)
     {
@@ -19,7 +19,7 @@ class CategorieDeServicesFixtures extends Fixture
 
         for ($i = 1; $i <= self::NBR_SER_CAT; $i++){
             $servCat = new CategorieDeServices();
-            $servCat->setNom($faker->title)
+            $servCat->setNom($faker->name)
                     ->setDescription($faker->text);
 
             $manager->persist($servCat);

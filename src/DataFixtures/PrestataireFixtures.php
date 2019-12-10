@@ -10,7 +10,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class PrestataireFixtures extends Fixture implements DependentFixtureInterface
 {
-    public const NBR_PRESTATAIRE = 10;
+    public const NBR_PRESTATAIRE = 25;
 
     public function load(ObjectManager $manager)
     {
