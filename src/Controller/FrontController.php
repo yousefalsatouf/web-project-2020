@@ -127,5 +127,8 @@ class FrontController extends AbstractController
         ]);
     }
 
+    // create menu controller
+    // only returns a partial template with the data arrays of the menu
+
 
 }

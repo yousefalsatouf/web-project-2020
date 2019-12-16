@@ -1,0 +1,7 @@
+<ul class="header-nav-primary nav nav-pills collapse navbar-collapse">
+    {% for keyword, link in menu %}
+        <li >
+            <a href="{{ path(link) }}">{{ keyword }} <i class="fa"></i></a>
+        </li>
+    {% endfor %}
+</ul>

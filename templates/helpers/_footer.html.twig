@@ -31,13 +31,7 @@
                 &copy; 2019 All rights reserved. Created by <a href="#">Yousef ALSATOUF</a>.
             </div><!-- /.footer-bottom-left -->
             <div class="footer-bottom-right">
-                <ul class="nav nav-pills">
-                    {% for link in links %}
-                        <li >
-                            <a href="{{ path(link) }}">{{ link }}</a>
-                        </li>
-                    {% endfor %}
-                </ul><!-- /.nav -->
+                {{ render(controller('App\\Controller\\MenuController::menu')) }}
             </div><!-- /.footer-bottom-right -->
         </div><!-- /.container -->
     </div>
