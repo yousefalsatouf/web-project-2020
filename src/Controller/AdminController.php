@@ -18,8 +18,6 @@ class AdminController extends AbstractController
         return $this->render('admin/index.html.twig', [
             'admin_title' => $admin,
             'superlist' => $superList,
-            'links' => array('Home', 'Lists', 'Admin', 'Contact', 'Login', 'Register'),
-            'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
         ]);
     }
 }

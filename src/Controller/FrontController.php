@@ -40,8 +40,6 @@ class FrontController extends AbstractController
             'find_cat' => $getFindCat,
             'is_searched'=>$setFind,
             'superlist' => $superList,
-            'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),
-            'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
         ]);
     }
 
@@ -72,8 +70,6 @@ class FrontController extends AbstractController
             'recipient' => $recipient,
             'detail_name' => 'Detail',
             'superlist' => 'Superlist',
-            'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),
-            'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
 
         ]);
     }
@@ -105,8 +101,6 @@ class FrontController extends AbstractController
             'category' => $category,
             'detail_name' => 'Detail',
             'superlist' => 'Superlist',
-            'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),
-            'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
 
         ]);
     }
@@ -122,8 +116,6 @@ class FrontController extends AbstractController
         return $this->render('front/contact.html.twig', [
             'contact_title' => $contact,
             'superlist' => $superlist,
-            'links' => array('Home', 'Listing', 'Admin', 'Contact', 'Login', 'Register'),
-            'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
         ]);
     }
 

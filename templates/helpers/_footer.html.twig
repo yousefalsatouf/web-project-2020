@@ -16,11 +16,7 @@
                 </div><!-- /.col-* -->
                 <div class="col-sm-4">
                     <h2>Stay Connected</h2>
-                    <ul class="social-links nav nav-pills">
-                        {% for icon in icons %}
-                            <li><a href="#"><i class="fa fa-{{ icon }}"></i></a></li>
-                        {% endfor %}
-                    </ul><!-- /.header-nav-social -->
+                    {{ render(controller('App\\Controller\\MenuController::icons')) }}
                 </div><!-- /.col-* -->
             </div><!-- /.row -->
         </div><!-- /.container -->
