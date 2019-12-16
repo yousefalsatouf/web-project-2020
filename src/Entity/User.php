@@ -2,13 +2,14 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User implements UserInterface
+class User extends EntityRepository implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -92,6 +93,19 @@ class User implements UserInterface
         $this->password = $password;
 
         return $this;
+    }
+
+    function loadUserByUsernameOrEmail($usernameOrEmail)
+    {
+        return $this->createQuery(
+            'SELECT u
+             FROM App\Entity\User u
+             WHERE u.username = :query
+             OR u.email = :query'
+        )
+        ->setParameter('query', $usernameOrEmail)
+        ->getQuery()
+        ->getOneOrNullResult();
     }
 
     /**
