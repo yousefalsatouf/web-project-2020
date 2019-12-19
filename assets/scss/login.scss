@@ -12,6 +12,7 @@
 
 #login
 {
+  height: 100%;
   .header
   {
     .nav
@@ -34,6 +35,22 @@
       color: $color-black;
       margin: 3rem;
       font-size: 50px;
+    }
+    label
+    {
+      margin: 2rem;
+      font-size: 18px;
+      font-weight: bolder;
+    }
+    input
+    {
+      border: 0px;
+      border-bottom: 1px solid #ccc;
+      height: 3rem;
+    }
+    button
+    {
+      margin: 3rem 0rem;
     }
   }
 
