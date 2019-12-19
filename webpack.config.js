@@ -29,6 +29,7 @@ Encore
     .addStyleEntry('home', './assets/scss/home.scss')
     .addStyleEntry('lists', './assets/scss/lists.scss')
     .addStyleEntry('detail', './assets/scss/detail.scss')
+    .addStyleEntry('login', './assets/scss/login.scss')
     //.addStyleEntry('header', './assets/scss/_header.scss')
     //.addStyleEntry('footer', './assets/scss/_footer.scss')
     //.addEntry('header', './assets/js/header.js')
