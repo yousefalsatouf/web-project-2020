@@ -31,22 +31,28 @@
     margin: 2rem;
     h1
     {
-      font-weight: bolder;
+      font-weight: bold;
       color: $color-black;
-      margin: 3rem;
+      margin: 2rem;
+      font-size: 40px;
+    }
+    b
+    {
       font-size: 50px;
+      color: $color-secondary;
     }
     label
     {
       margin: 2rem;
       font-size: 18px;
       font-weight: bolder;
+      color: $color-secondary;
     }
     input
     {
       border: 0px;
       border-bottom: 1px solid #ccc;
-      height: 3rem;
+      height: 4rem;
     }
     button
     {

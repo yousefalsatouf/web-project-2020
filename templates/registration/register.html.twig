@@ -1,15 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
-
+{% block title %}{{ register_title }}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('register') }}
+{% endblock %}
 {% block body %}
-    <h1>Register</h1>
+    <div id="login" class="page-wrapper">
+        {% block header %}
+            {% include 'helpers/_header.html.twig' %}
+        {% endblock %}
+        <div class="container">
+            <form method="post">
+                <b>Hey Stranger,  <small>Let's know you !</small></b>
+                <h1 class="h3 mb-3 ">Please Sign Up :</h1>
+                <h1>Register</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+                {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword) }}
+                {{ form_row(registrationForm.agreeTerms) }}
 
-        <button class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                <button class="btn">Register</button>
+                {{ form_end(registrationForm) }}
+            </form>
+        </div>
+        {% block footer %}
+            {% include 'helpers/_footer.html.twig' %}
+        {% endblock %}
+    </div>
 {% endblock %}

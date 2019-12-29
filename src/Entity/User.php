@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\EntityRepository;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class User extends EntityRepository implements UserInterface
+class User implements UserInterface
 {
     /**
      * @ORM\Id()

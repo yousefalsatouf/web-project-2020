@@ -1,0 +1,26 @@
+// bootstrap ...
+@import '~bootstrap';
+
+// superList ...
+@import 'components/superlist';
+
+//layout ...
+@import 'layout/header';
+@import 'layout/footer';
+
+#register
+{
+  .header
+  {
+    .nav
+    {
+      li:last-child
+      {
+        border-bottom: 4px solid $color-secondary;
+        a{
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+}
