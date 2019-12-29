@@ -23,33 +23,48 @@ class RegistrationController extends AbstractController
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
+        $confirmationError = false;
+        if ($form->isSubmitted())
+        {
+            $password =  $form->get('plainPassword')->getData();
+            $confirm = $form->get('confirmPassword')->getData();
+            if ($password == $confirm)
+            {
+                if ($form->isValid()) {
+                    // encode the plain password
+                    $user->setPassword(
+                        $passwordEncoder->encodePassword(
+                            $user,
+                            $form->get('plainPassword')->getData()
+                        )
+                    );
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
+                    $entityManager = $this->getDoctrine()->getManager();
+                    $entityManager->persist($user);
+                    $entityManager->flush();
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
+                    // do anything else you need here, like send an email
 
-            // do anything else you need here, like send an email
 
-            return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $authenticator,
-                'main' // firewall name in security.yaml
-            );
+                    return $guardHandler->authenticateUserAndHandleSuccess(
+                        $user,
+                        $request,
+                        $authenticator,
+                        'main' // firewall name in security.yaml
+                    );
+                }
+            }
+            else
+            {
+                $confirmationError="Sorry, Password doesn't match !";
+            }
+
         }
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
             'register_title' => "Register !!",
+            'confirmationError' => $confirmationError,
             'superlist' => "Superlist"
         ]);
     }

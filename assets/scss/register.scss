@@ -23,4 +23,50 @@
       }
     }
   }
+  .container
+  {
+    form
+    {
+      margin: 2rem;
+      b
+      {
+        font-size: 50px;
+        color: $color-secondary;
+        margin-right: 0.5rem;
+      }
+      h1
+      {
+        font-weight: bold;
+        color: $color-primary;
+        margin: 2rem;
+        font-size: 40px;
+      }
+      div
+      {
+        label
+        {
+          margin: 1rem;
+          font-size: 18px;
+          font-weight: bolder;
+          color: $color-secondary;
+        }
+        input
+        {
+          border: 0;
+          border-bottom: 1px solid #ccc;
+          height: 4rem;
+        }
+      }
+      small
+      {
+        color: darkred;
+        padding: 0.5rem;
+        font-weight: 700;
+      }
+      button
+      {
+        margin: 3rem 0;
+      }
+    }
+  }
 }
