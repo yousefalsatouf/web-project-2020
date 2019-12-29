@@ -12,7 +12,7 @@ class UserController extends AbstractController
      */
     public function login()
     {
-        $loginTitle = 'Login';
+        /*$loginTitle = 'Login';
         $superList = 'Superlist';
 
         return $this->render('user/login.html.twig', [
@@ -20,7 +20,7 @@ class UserController extends AbstractController
             'superlist'=> $superList,
             'links' => array('Home', 'Lists', 'Admin', 'Contact', 'Login', 'Register'),
             'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
-        ]);
+        ]);*/
     }
 
     /**
@@ -28,7 +28,7 @@ class UserController extends AbstractController
      */
     public function register()
     {
-        $registerTitle = 'Register';
+       /* $registerTitle = 'Register';
         $superList = 'Superlist';
 
         return $this->render('user/register.html.twig', [
@@ -36,6 +36,6 @@ class UserController extends AbstractController
             'superlist' => $superList,
             'links' => array('Home', 'Lists', 'Admin', 'Contact', 'Login', 'Register'),
             'icons' => array('twitter', 'facebook', 'google-plus', 'linkedin', 'instagram'),
-        ]);
+        ]);*/
     }
 }
