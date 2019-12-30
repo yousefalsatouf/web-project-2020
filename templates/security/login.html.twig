@@ -14,12 +14,6 @@
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
-
-                {% if app.user %}
-                    <div class="mb-3">
-                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                    </div>
-                {% endif %}
                 <b>Hey you,  </b>
                 <h1 class="h3 mb-3 ">Please Sign in :</h1>
                 <label for="inputEmail">Email: </label>
@@ -30,9 +24,16 @@
                 <input type="hidden" name="_csrf_token"
                        value="{{ csrf_token('authenticate') }}">
 
-                <button class="btn btn-lg btn-primary col-lg-3" type="submit">
-                    Sign in
-                </button>
+                <div class="d-flex justify-content-around">
+                    <button class="btn btn-lg btn-primary col-lg-3" type="submit">
+                        Sign in
+                    </button>
+                    {% if app.user %}
+                        <button class="btn btn-lg btn-danger col-lg-3" type="submit">
+                            <a href="{{ path('app_logout') }}" class="text-white">Logout</a>
+                        </button>
+                    {% endif %}
+                </div>
             </form>
         </div>
         {% block footer %}

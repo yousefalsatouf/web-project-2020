@@ -12,12 +12,18 @@
 {
   .header
   {
-    .nav
-    {
-      li:last-child
-      {
+    .nav {
+      li:nth-child(6) {
         border-bottom: 4px solid $color-secondary;
-        a{
+
+        a {
+          color: $color-secondary;
+        }
+      }
+      li:nth-child(7) {
+        border-bottom: 4px solid $color-secondary;
+
+        a {
           color: $color-secondary;
         }
       }

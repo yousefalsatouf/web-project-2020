@@ -1,0 +1,20 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}{{ profile_title }}!{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('userProfile') }}
+{% endblock %}
+{% block body %}
+    <div id="profile" class="page-wrapper">
+        {% block header %}
+            {% include 'helpers/_header.html.twig' %}
+        {% endblock %}
+        <div class="container">
+           <h1>User profile here yo !</h1>
+        </div>
+        {% block footer %}
+            {% include 'helpers/_footer.html.twig' %}
+        {% endblock %}
+    </div>
+
+{% endblock %}

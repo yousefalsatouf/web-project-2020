@@ -1,10 +1,13 @@
 <ul class="header-nav-primary nav nav-pills collapse navbar-collapse">
     {% for keyword, link in menu %}
-        <li >
-            <a href="{{ path(link) }}">{{ keyword }} <i class="fa"></i></a>
+        <li>
+            <a href="{{ path(link) }}" class="{{ link }}">{{ keyword }} <i class="fa"></i></a>
         </li>
     {% endfor %}
     {% if app.user %}
-        <li>Logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a></li>
+        <li class="text-success">Logged in as,
+                <a href="{{ path('Profile') }}"><strong>{{ app.user.username }}</strong></a>
+                <a href="{{ path('app_logout') }}" class="text-danger">Logout</a>
+        </li>
     {% endif %}
 </ul>

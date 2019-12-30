@@ -15,7 +15,9 @@ class MenuController extends AbstractController
                         'Admin'=>'Admin',
                         'Contact'=>'Contact',
                         'Login'=>'Login',
-                        'Register'=>'Register');
+                        'Register'=>'Register',
+
+            );
 
         return $this->render('helpers/_menu-list.html.twig', [
             'menu' => $menu,
