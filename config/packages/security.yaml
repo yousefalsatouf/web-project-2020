@@ -28,6 +28,13 @@ security:
             security: false
         main:
             anonymous: true
+            form_login:
+                provider: in_memory
+                login_path: login
+                check_path: login
+                csrf_token_generator: security.csrf.token_manager
+                always_use_default_target_path: true
+                default_target_path: /
             guard:
                 provider: chain_provider
                 authenticators:
