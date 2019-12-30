@@ -9,6 +9,8 @@ use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
@@ -18,7 +20,12 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="Register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator, UserRepository $repo): Response
+    public function register(Request $request,
+                             UserPasswordEncoderInterface $passwordEncoder,
+                             GuardAuthenticatorHandler $guardHandler,
+                             LoginFormAuthenticator $authenticator,
+                             MailerInterface $mailer,
+                             UserRepository $repo): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -44,7 +51,14 @@ class RegistrationController extends AbstractController
                     $entityManager->flush();
 
                     // do anything else you need here, like send an email
-
+                    $mine = "yousef.alsatouf94@gmail.com";
+                    $to = $form->get('email')->getData();
+                    $email = (new Email())
+                                ->from($mine)
+                                ->to($to)
+                                ->subject("test sending email with mailer")
+                                ->text("sending email is fun");
+                    $mailer->send($email);
 
                     return $guardHandler->authenticateUserAndHandleSuccess(
                         $user,
