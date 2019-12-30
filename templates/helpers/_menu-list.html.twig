@@ -4,4 +4,7 @@
             <a href="{{ path(link) }}">{{ keyword }} <i class="fa"></i></a>
         </li>
     {% endfor %}
+    {% if app.user %}
+        <li>Logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a></li>
+    {% endif %}
 </ul>
