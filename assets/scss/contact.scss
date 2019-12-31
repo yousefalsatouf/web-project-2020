@@ -10,18 +10,13 @@
 
 
 
-#profile
+#contact
 {
-  .main
-  {
-    display: flex;
-    justify-content: center;
-  }
   .header
   {
     .nav
     {
-      li:last-child
+      li:nth-child(4)
       {
         border-bottom: 4px solid $color-secondary;
         a
