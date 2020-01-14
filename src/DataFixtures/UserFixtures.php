@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Faker;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixtures extends Fixture
@@ -19,13 +20,17 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $user = new User();
+        $faker = Faker\Factory::create();
 
-        $user->setPassword($this->passwordEncoder->encodePassword(
+        $password =  $this->passwordEncoder->encodePassword(
             $user,
-            '$argon2id$v=19$m=65536,t=4,p=1$Uk9iVVM2eTgwVi5vaDdpbg$kmOzuuGKqu9jBvoD7pYJsyDBVenRului02dKD0MUH4o'
-        ));
+            '$argon2id$v=19$m=65536,t=4,p=1$QVF6LmE3NDFidHdtQTZjSQ$MZmi3kLMJgjJ0j/et/ohNgNGHkxX/xQCwA3dg0TLpwc'
+        );
 
+        $user->setEmail($faker->email)
+              ->setPassword($password);
 
+        $manager->persist($user);
 
         $manager->flush();
     }
