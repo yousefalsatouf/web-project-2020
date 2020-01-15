@@ -23,6 +23,7 @@ class PrestataireFixtures extends Fixture implements DependentFixtureInterface
                  ->setAdresseNbr($faker->buildingNumber)
                  ->setAdresseRue($faker->streetName)
                  ->setEmail($faker->name."@".$pres->getNom().".com")
+                ->setPassword('hh')
                  ->setEMailContact("info@".$pres->getNom().".com")
                  ->setNumTVA($faker->numberBetween(0, 100))
                  ->setSiteInternet("www.".$pres->getNom().".com")

@@ -28,7 +28,8 @@ class UserFixtures extends Fixture
         );
 
         $user->setEmail($faker->email)
-              ->setPassword($password);
+            ->setRoles(['user'])
+            ->setPassword($password);
 
         $manager->persist($user);
 

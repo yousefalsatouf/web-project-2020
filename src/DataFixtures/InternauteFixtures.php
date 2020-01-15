@@ -20,6 +20,7 @@ class InternauteFixtures extends Fixture implements DependentFixtureInterface
             $inter = new Internaute();
             $inter->setNom($faker->lastName)
                   ->setPrenom($faker->firstName)
+                ->setPassword('gjk')
                   ->setAdresseNbr($faker->buildingNumber)
                   ->setAdresseRue($faker->streetName)
                   ->setEmail($inter->getNom()."@gmail.com")
