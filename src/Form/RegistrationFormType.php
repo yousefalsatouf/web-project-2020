@@ -20,20 +20,22 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-           /*->add('roles', EntityType::class, [
-               'class' => User::class,
-               'query_builder' => function (EntityRepository $er) {
-                   return $er->createQueryBuilder('u')
-                       ->orderBy('u.roles', 'ASC');
-               },
-               'choice_label' => 'Select a role: ',
-           ])*/
-            ->add('roles', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => function ($user) {
-                    return $user->getRoles();
-                }
+            ->add('roles', ChoiceType::class, [
+                'required' => true,
+                'multiple' => true,
+                'choices' => ['User' => 'user', 'Provider' => 'prestataire', 'Internet User' => 'internaute'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please select a choice',
+                    ])
+                ],
             ])
+
+            /*->add('roles', EntityType::class, [
+                'class' => User::class,
+                'choices' => ['Roles']
+            ])
+            */
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -80,16 +82,3 @@ class RegistrationFormType extends AbstractType
         ]);
     }
 }
-
-
-/*
- * 'required' => true,
-                'choices' => ['user' => 'User', 'prestataire' => 'Provider', 'internaute' => 'Internet User'],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a password',
-                    ])
-                ],
- *
- *
- * */
