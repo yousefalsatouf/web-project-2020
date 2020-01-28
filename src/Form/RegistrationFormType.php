@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -18,14 +20,19 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('roles', ChoiceType::class, [
-                'required' => true,
-                'choices' => ['user' => 'User', 'prestataire' => 'Provider', 'internaute' => 'Internet User'],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a password',
-                    ])
-                ],
+           /*->add('roles', EntityType::class, [
+               'class' => User::class,
+               'query_builder' => function (EntityRepository $er) {
+                   return $er->createQueryBuilder('u')
+                       ->orderBy('u.roles', 'ASC');
+               },
+               'choice_label' => 'Select a role: ',
+           ])*/
+            ->add('roles', EntityType::class, [
+                'class' => User::class,
+                'choice_label' => function ($user) {
+                    return $user->getRoles();
+                }
             ])
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
@@ -73,3 +80,16 @@ class RegistrationFormType extends AbstractType
         ]);
     }
 }
+
+
+/*
+ * 'required' => true,
+                'choices' => ['user' => 'User', 'prestataire' => 'Provider', 'internaute' => 'Internet User'],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter a password',
+                    ])
+                ],
+ *
+ *
+ * */
