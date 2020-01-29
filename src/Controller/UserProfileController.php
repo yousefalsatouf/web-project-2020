@@ -16,7 +16,6 @@ class UserProfileController extends AbstractController
         return $this->render('user/profile.html.twig', [
             'superlist'=>"Superlist",
             'profile_title'=>"User",
-
         ]);
     }
 }

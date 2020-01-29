@@ -1,0 +1,11 @@
+fos_user:
+  #...
+  service:
+    mailer: fos_user.mailer.twig_swift
+  registration:
+    enable: true
+    confirmation:
+      template:   '@FOSUser/Registration/email.txt.twig'
+      from_email:
+        address: yousef.alsatouf94@gmail.com
+        sender_name: yousef
