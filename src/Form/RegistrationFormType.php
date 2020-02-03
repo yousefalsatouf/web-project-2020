@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Service\FileUploader;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -72,7 +73,7 @@ class RegistrationFormType extends AbstractType
 
                 ],
             ])
-        ;
+            ->add('image',FileUploader::class,array('data_class'=> null, 'label' => 'Image'));
     }
 
     public function configureOptions(OptionsResolver $resolver)
