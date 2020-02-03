@@ -19,6 +19,9 @@
                                     <div class="user-photo">
                                         <a href="#">
                                             <img src="{{ asset('build/images/tmp/agent-2.jpg') }}" alt="User Photo">
+                                            {{ form_start(form) }}
+                                            {{ form_row(form.brochure) }}
+                                            {{ form_end(form) }}
                                             <span class="user-photo-action">Click here to reupload</span>
                                         </a>
                                     </div><!-- /.user-photo -->

@@ -2,13 +2,11 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Images;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
-use App\Service\FileUploader;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -28,7 +26,6 @@ class UserProfileController extends AbstractController
 
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
-            // moves the file to the directory where brochures are stored
             $file->move(
                 $this->getParameter('brochures_directory'),
                 $fileName
