@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Images;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
@@ -17,13 +18,18 @@ class UserProfileController extends AbstractController
      */
     public function userProfile(AuthenticationUtils $auth, Security $security, Request $request): Response
     {
-
-        $username = $security->getUser();
-        //dd($request->files->get('image'));
+        /** @var UploadedFile $uploadedFile */
+        $uploadedFile = $request->files->get('image');
+        $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
+        $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+        $newFilename = $originalFilename.'-'.uniqid().'.'.$uploadedFile->guessExtension();
+        $uploadedFile->move(
+            $destination,
+            $newFilename
+        );
 
         return $this->render('user/profile.html.twig', [
             'superlist'=>"Superlist",
-            'username'=> $username,
         ]);
     }
 
