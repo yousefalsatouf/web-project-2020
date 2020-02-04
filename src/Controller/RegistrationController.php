@@ -52,10 +52,10 @@ class RegistrationController extends AbstractController
 
                     // do anything else you need here, like send an email
                     $mine = "yousef.alsatouf94@gmail.com";
-                    $to = $form->get('email')->getData();
+                    $you = $form->get('email')->getData();
                     $email = (new Email())
                                 ->from($mine)
-                                ->to($to)
+                                ->to($you)
                                 ->subject("test sending email with mailer")
                                 ->text("sending email is fun");
                     $mailer->send($email);

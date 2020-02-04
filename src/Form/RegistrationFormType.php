@@ -16,6 +16,7 @@ use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use function Sodium\add;
 
 class RegistrationFormType extends AbstractType
 {
@@ -73,6 +74,10 @@ class RegistrationFormType extends AbstractType
                     ]),
 
                 ],
+            ])
+            ->add('imageFile', FileType::class, [
+                'mapped' => false,
+                'required' => false,
             ])
             /*->add('brochure', FileType::class, [
                 'label' => 'Brochure (PDF file)',
