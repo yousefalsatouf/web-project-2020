@@ -19,12 +19,13 @@
                                     <div class="user-photo">
                                         <a href="#">
                                             <!--<img src="{{ asset('build/images/tmp/agent-2.jpg') }}" alt="User Photo">-->
-                                            <!--<form method="POST" action="{{ path('upload_test') }}" enctype="multipart/form-data">
+                                            <!--<form method="POST" action="{{ path('Profile') }}" enctype="multipart/form-data">
                                                     <input type="file" name="image">
                                                     <button class="user-photo-action" type="submit">Upload !</button>
                                             </form>-->
                                             {{ form_start(form) }}
                                             {{ form_row(form.imageFile) }}
+                                                <button class="user-photo-action" type="submit">Upload !</button>
                                             {{ form_end(form) }}
                                         </a>
                                     </div><!-- /.user-photo -->

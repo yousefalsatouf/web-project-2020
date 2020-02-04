@@ -17,14 +17,15 @@ class UserProfileController extends AbstractController
     /**
      * @Route("/user-profile", name="Profile")
      */
-    public function userProfile(AuthenticationUtils $auth, Security $security, Request $request, FileUploader $fileUploader)
+    public function userProfile(Request $request, FileUploader $fileUploader)
     {
         $img = new Images();
 
         $form = $this->createForm(RegistrationFormType::class, $img);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
             /** @var UploadedFile $uploadedFile */
             $uploadedFile = $form['imageFile']->getData();
             $destination = $this->getParameter('kernel.project_dir') . '/public/uploads';
@@ -35,7 +36,6 @@ class UserProfileController extends AbstractController
                 $destination,
                 $newFilename
             );
-
             $img->setImage($newFilename);
         }
 
@@ -45,14 +45,14 @@ class UserProfileController extends AbstractController
         ]);
     }
 
-    /**
+    /*/**
      * @Route("/upload", name="upload_test")
      */
-    public function temporaryUploadAction(Request $request)
+    /*public function temporaryUploadAction(Request $request)
     {
 
         /** @var UploadedFile $uploadedFile */
-        $uploadedFile = $request->files->get('image');
+      /*  $uploadedFile = $request->files->get('image');
         $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
 
         $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
@@ -64,7 +64,5 @@ class UserProfileController extends AbstractController
             'superlist'=>"Superlist",
         ]);
 
-    }
-
-
+    }*/
 }
