@@ -19,14 +19,14 @@
                                     <div class="user-photo">
                                         <a href="#">
                                             <!--<img src="{{ asset('build/images/tmp/agent-2.jpg') }}" alt="User Photo">-->
-                                            <form method="POST" action="{{ path('Profile') }}" enctype="multipart/form-data">
+
+                                            <form method="POST" action="{{ path('upload_test') }}" enctype="multipart/form-data">
                                                 <div class="d-flex ">
                                                     <input type="file" name="image">
 
                                                     <button class="user-photo-action" type="submit">Click here to Upload</button>
                                                 </div>
                                             </form>
-
                                         </a>
                                     </div><!-- /.user-photo -->
                                 </div><!-- /.widget -->
